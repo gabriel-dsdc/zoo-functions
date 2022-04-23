@@ -1,6 +1,6 @@
 const { species, employees } = require('../data/zoo_data');
 
-const responsibleArray = (employee) => {
+const getSpecies = (employee) => {
   const speciesArray = [];
   const locationsArray = [];
   return species.reduce((acc, specie) => {
@@ -28,7 +28,7 @@ const getEmployee = (person, key) => employees.reduce((acc, employee) => {
   if ([id, firstName, lastName].includes(person[key])) {
     object.id = id;
     object.fullName = `${firstName} ${lastName}`;
-    const [speciesArray, locationsArray] = responsibleArray(employee);
+    const [speciesArray, locationsArray] = getSpecies(employee);
     object.species = speciesArray;
     object.locations = locationsArray;
   }
@@ -42,7 +42,7 @@ const getAllEmployees = () => {
     const { id, firstName, lastName } = employee;
     object.id = id;
     object.fullName = `${firstName} ${lastName}`;
-    const [speciesArray, locationsArray] = responsibleArray(employee);
+    const [speciesArray, locationsArray] = getSpecies(employee);
     object.species = speciesArray;
     object.locations = locationsArray;
     newArray.push(object);
