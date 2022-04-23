@@ -14,8 +14,4 @@ const getOldestFromFirstSpecies = (id) => {
   }, []);
 };
 
-console.log(getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
-// console.log(getOldestFromFirstSpecies('fdb2543b-5662-46a7-badc-93d960fdc0a8'));
-
 module.exports = getOldestFromFirstSpecies;
-// ['Maxwell', 'male', 15]
